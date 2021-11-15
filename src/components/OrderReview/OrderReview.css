@@ -1,0 +1,14 @@
+.shop-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-top: 25px;
+}
+.product-container{
+    border-right: 1px solid lightgray;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    padding-left: 140px;
+}
+.cart-container{
+    text-align: center;
+}
