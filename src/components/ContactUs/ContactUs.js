@@ -28,7 +28,7 @@ const ContactUs = () => {
                         <div>
                             <h5>Address: <small>House#15-19, Block-E, Banasree, Main Road, Rampura, Dhaka-1219.</small> </h5>
                             <h5>Phone: <small>+8802-8390000, +8801952289332, +8801845444444</small> </h5>
-                            <h5>Email: <small>tourdeworld@gmail.com</small> </h5>
+                            <h5>Email: <small>roadbolt@gmail.com</small> </h5>
                         </div>
                     </div>
                 </div>

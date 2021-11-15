@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 
 const AllService = (props) => {
 
-    const { title,duration,description,price,image } = props.product;
+    const { title,description,price,image } = props.product;
     const history = useHistory();
     const handleProceedToShipping = () => {
         history.push('/shipping');}
@@ -18,7 +18,7 @@ const AllService = (props) => {
             <div>
                 <br />
                 <h4 className="product-name">{title}</h4>
-                <p>Duration: <small>{duration}</small></p>
+            
                 <p>Price: {price}</p>
                 <p>Description: {description}</p>
                 <br />

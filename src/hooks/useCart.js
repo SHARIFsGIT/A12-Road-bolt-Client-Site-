@@ -7,7 +7,7 @@ const useCart = () => {
     useEffect(() => {
         const savedCart = getStoredCart();
         const keys = Object.keys(savedCart);
-        fetch('http://localhost:5000/products/byKeys', {
+        fetch('https://mighty-coast-78516.herokuapp.com/services/byKeys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

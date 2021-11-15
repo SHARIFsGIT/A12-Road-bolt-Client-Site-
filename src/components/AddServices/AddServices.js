@@ -1,18 +1,15 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import useAuth from "../../hooks/useAuth";
 
 const AddServices = () => {
-  const { user } = useAuth();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addProducts", {
+    fetch("https://mighty-coast-78516.herokuapp.com/addProducts", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -23,7 +20,7 @@ const AddServices = () => {
   return (
     <div>
       <div>
-        <h1 className="mt-5 text-center text-danger">Please Add Services</h1>
+        <h1 className="mt-5 text-center text-danger">Add Service</h1>
         <div className=" w-25 m-auto mt-5">
           <div className=" ">
             <div className="">
@@ -54,9 +51,9 @@ const AddServices = () => {
                 />
 
                 <select {...register("model")} className="p-2 m-2 w-100">
-                  <option value="premium">premium</option>
-                  <option value="classic">classic</option>
-                  <option value="business">business</option>
+                  <option value="premium">Premium</option>
+                  <option value="classic">Classic</option>
+                  <option value="business">Business</option>
                 </select>
                 <br />
 

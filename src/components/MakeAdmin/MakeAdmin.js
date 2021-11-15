@@ -1,10 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 const MakeAdmin = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit} = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/makeAdmin", {
+    fetch("https://mighty-coast-78516.herokuapp.com/makeAdmin", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -15,7 +15,7 @@ const MakeAdmin = () => {
   };
   return (
     <div>
-      <h1>make admin</h1>
+      <h1>Make Admin</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           className="input-field"

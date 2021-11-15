@@ -1,0 +1,7 @@
+.review{
+    border-right: 1px solid lightgray;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    padding-left: 50px;
+    
+}

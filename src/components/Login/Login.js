@@ -11,8 +11,10 @@ const Login = () => {
 
 
     const handleGoogleLogin = () => {
+        
         signInUsingGoogle()
             .then(result => {
+                
                 history.push(redirect_uri);
             })
     }
@@ -28,7 +30,7 @@ const Login = () => {
                     <br />
                     <input type="submit" value="Submit" />
                 </form>
-                <p className="new">New to TOUR de WORLD? <Link to="/register">Create New Account</Link></p>
+                <p className="new">New to Road Bolt? <Link to="/register">Create New Account</Link></p>
                 <div>---------or------------</div> <br/>
                 <button
                     className="btn"

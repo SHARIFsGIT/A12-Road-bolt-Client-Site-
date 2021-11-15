@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, getIdToken ,
  createUserWithEmailAndPassword} from "firebase/auth";
 import initializeAuthentication from '../Firebase/firebase.init';
-
 initializeAuthentication();
 
 const useFirebase = () => {
@@ -11,9 +10,11 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
+
     const signInUsingGoogle = () => {
         return signInWithPopup(auth, googleProvider)
-            .finally(() => { setLoading(false) });
+            .finally(() => { 
+                setLoading(false) });
     }
 
     const logOut = () => {
@@ -21,6 +22,7 @@ const useFirebase = () => {
         signOut(auth)
             .then(() => {
                 setUser({})
+               
             })
             .finally(() => setLoading(false))
     }
@@ -28,7 +30,7 @@ const useFirebase = () => {
         // user info 
 
         const hanldeUserInfoRegister = (email) => {
-            fetch("http://localhost:5000/addUserInfo", {
+            fetch("https://mighty-coast-78516.herokuapp.com/addUserInfo", {
               method: "POST",
               headers: { "content-type": "application/json" },
               body: JSON.stringify({ email }),

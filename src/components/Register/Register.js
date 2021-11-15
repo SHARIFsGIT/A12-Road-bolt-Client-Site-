@@ -1,45 +1,31 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// const Register = () => {
-//     return (
-//         <div className="login-form">
-//             <div>
-//                 <h2>Register: Create Account</h2>
-//                 <form onSubmit="">
-//                     <input type="email" placeholder="Your Email" />
-//                     <br />
-//                     <input type="password" placeholder="Your Password" />
-//                     <br />
-//                     <input type="password" placeholder="Re-enter Password" />
-//                     <br />
-//                     <input type="submit" value="Submit" />
-//                 </form>
-//                 <p>Already have an account? <Link  to="/login">Login</Link></p>
-//                 <div>----------or-------------</div>
-//                 <button className="btn-regular">Google Sign In</button>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Register;
-
-import React from "react";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
-  const { googleSignIn, handleUserRegister } = useAuth();
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { handleUserRegister } = useAuth();
+  const { register, handleSubmit } = useForm();
+  const location = useLocation();
+    const history = useHistory();
+  const redirect_uri = location.state?.from || '/shop';
 
   const onSubmit = (data) => {
     handleUserRegister(data.email, data.password);
     console.log(data);
+    history.push(redirect_uri);
+
   };
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          className="input-field"
+          name="name"
+          placeholder="Name"
+          type="text"
+          {...register("name", { required: true })}
+        />
         <input
           className="input-field"
           name="email"

@@ -1,5 +1,7 @@
 .shipping-form{
     margin:30px 150px;
+    transform: translateX(450px);
+    padding-bottom: 50px;
 }
 .shipping-form input {
     display: block;

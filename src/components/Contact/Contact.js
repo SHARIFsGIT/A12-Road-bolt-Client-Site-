@@ -12,7 +12,7 @@ const ContactForm = () => {
       email: email.value,
       message: message.value,
     };
-    let response = await fetch("http://localhost:5000/contact", {
+    let response = await fetch("https://mighty-coast-78516.herokuapp.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -36,8 +36,8 @@ const ContactForm = () => {
     <Form.Label>Comments</Form.Label>
     <Form.Control as="textarea" rows={3} placeholder="We Appreciate Your Feedback!"/>
   </Form.Group>
-  <button type="button" class="btn-success p-2 rounded">Submit</button>
-<button type="button" class="btn-danger ms-3 p-2 rounded">Cancel</button>
+  <button type="button" className="btn-success p-2 rounded">Submit</button>
+<button type="button" className="btn-danger ms-3 p-2 rounded">Cancel</button>
 </Form>
   );
 };

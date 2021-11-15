@@ -14,7 +14,7 @@ const Product = (props) => {
                 <h4 className="product-name">{title}</h4>
                 <p>Cost Per Person: {price}</p>
                 <p>{description}</p>
-                <Link to="/review" className="btn p-2">View Details</Link>
+                <Link to="/shipping" className="btn p-2">View Details</Link>
             </div>
         </div>
     );

@@ -1,29 +1,34 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink , Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png';
 import './Header.css';
 
+
+
 const Header = () => {
-    const { user, logOut } = useAuth();
+
+  const { user,logOut } = useAuth();
+
+
     return (
         <div className="header">
             <img className="logo" src={logo} alt="" /> 
             <nav className="d-flex justify-content-between align-items-center">
                 <div className="ps-5">
+                
+                
                 <NavLink to="/home">Home</NavLink>
-                <NavLink to="/review">Packages</NavLink>
-                {user.email && <NavLink to="/orders">Orders</NavLink>}
-                {user.email &&<NavLink to="/dashboard">Dashboard</NavLink>}
+                <NavLink to="/review">Bikes</NavLink>
                 <NavLink to="/about">About Us</NavLink>
                 <NavLink to="/contact">Contact Us</NavLink>
+                {user.email && <NavLink  to="/dashboard">Dashboard</NavLink>}
                 
                 </div>
                     <div>
                     {user.email && <span className="display-name" >{user.displayName} </span>}
                 {
-                    user.email ?
-                        <button className="button" onClick={logOut}>Logout</button>
+                    user.email ?<Link to="/home" ><button className="button" onClick={logOut}>Logout</button></Link>
                         : 
                         <NavLink to="/login">Login</NavLink>}
                     </div>

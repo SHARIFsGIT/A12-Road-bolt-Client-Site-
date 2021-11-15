@@ -9,7 +9,6 @@ import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Register from './components/Register/Register';
 import Shipping from './components/Shipping/Shipping';
-import AuthProvider from './context/AuthProvider';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import PageNotFound from './components/PageNotFound/PageNotFound';
@@ -17,6 +16,11 @@ import ContactUs from './components/ContactUs/ContactUs';
 import Dashboard from './components/Dashboard/Dashboard';
 import AddServices from './components/AddServices/AddServices';
 import ManageServices from './components/ManageServices/ManageServices';
+import Review from './components/Review/Review';
+import MyBookings from './components/MyBookings/MyBookings';
+import MakeAdmin from './components/MakeAdmin/MakeAdmin';
+import AuthProvider from './context/AuthProvider';
+import Payment from './components/Payment/Payment';
 
 function App() {
   return (
@@ -49,9 +53,9 @@ function App() {
             <PrivateRoute exact path="/placeorder">
               <PlaceOrder></PlaceOrder>
             </PrivateRoute>
-            <PrivateRoute exact path="/orders">
+            <Route exact path="/orders">
               <Orders></Orders>
-            </PrivateRoute>
+            </Route>
             <Route exact path="/login">
               <Login></Login>
             </Route>
@@ -64,7 +68,29 @@ function App() {
             <Route exact path="/contact">
               <ContactUs></ContactUs>
             </Route>
-            <Route path="*">
+            <Route exact path="/dashboard/review">
+                <Review></Review>
+              </Route>
+              <Route exact path="/dashboard/payment">
+                <Payment></Payment>
+              </Route>
+              <Route exact path="/dashboard/BookingList">
+                <Orders></Orders>
+              </Route>
+              <Route exact path="/dashboard/UserBookingList">
+                <MyBookings></MyBookings>
+              </Route>
+              <Route exact path="/dashboard/makeAdmin">
+                <MakeAdmin></MakeAdmin>
+              </Route>
+              <Route exact path="/dashboard/addService">
+                <AddServices></AddServices>
+              </Route>
+              <Route exact path="/dashboard/manageServices">
+                <ManageServices></ManageServices>
+              </Route>
+              
+            <Route exact path="dashboard/*">
               <PageNotFound></PageNotFound>
             </Route>
           </Switch>
